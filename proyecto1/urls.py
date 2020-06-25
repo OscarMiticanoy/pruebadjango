@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from api.migrations.api import UserApi
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/create_user', UserApi.as_view(), name="create_users")
 ]
